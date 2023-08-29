@@ -1,0 +1,17 @@
+{{ 'product-card.css' | asset_url | stylesheet_tag }}
+<div class="product-card {{ prod.id }}">
+  <a href="{{ prod.url }}">
+    <div class="inner">
+      <div class="thumb prd-img">
+        {{ prod.featured_image | image_url: width: 900 | image_tag }}
+      </div>
+      <div class="prd-desp">
+        <p class="prd-vendor_name">{{ prod.vendor }}</p>
+        <p class="prd-name">
+          {{ prod.title }}
+        </p>
+        <p class="prd-price">from {{ prod.price_min | money_with_currency }}</p>
+      </div>
+    </div>
+  </a>
+</div>

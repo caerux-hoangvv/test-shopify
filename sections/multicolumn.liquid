@@ -1,0 +1,78 @@
+{{ 'multicolumn.css' | asset_url | stylesheet_tag }}
+<div class="multicolumn">
+  <h2 class="title {{ section.settings.title_size }}">{{ section.settings.title }}</h2>
+  <ul class="multicolumn_list multicolumn_list_{{ section.settings.num_col }} {{ section.settings.text_align }} {{ section.settings.background }}">
+    {% for col in (1..section.settings.num_col) %}
+      <li>
+        <h3>
+          {{ forloop.index }}Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente earum quo labore, ea
+          suscipit consequuntur perferendis ex sed itaque fugiat accusantium veniam optio dolorem eligendi ad voluptatum
+          neque vero nulla?
+        </h3>
+      </li>
+    {% endfor %}
+  </ul>
+</div>
+
+{% schema %}
+{
+  "name": "multicolumn",
+  "class": "multicolumn",
+  "tag": "section",
+  "settings": [
+    {
+      "id": "title",
+      "type": "text",
+      "label": "Section title"
+    },
+    {
+      "id": "title_size",
+      "type": "select",
+      "label": "Section title size",
+      "options": [
+        {
+          "value": "small",
+          "label": "Small"
+        },
+        {
+          "value": "normal",
+          "label": "Normal"
+        },
+        {
+          "value": "large",
+          "label": "Large"
+        }
+      ]
+    },
+    {
+      "id": "num_col",
+      "type": "range",
+      "label": "Number of column",
+      "min": 1,
+      "max": 5,
+      "step": 1,
+      "unit": "col",
+      "default": 4
+    },
+    {
+      "id": "text_align",
+      "type": "select",
+      "label": "Text align",
+      "options": [
+        {
+          "value": "left",
+          "label": "Left"
+        },
+        {
+          "value": "right",
+          "label": "Right"
+        },
+        {
+          "value": "center",
+          "label": "Center"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

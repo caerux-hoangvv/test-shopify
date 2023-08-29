@@ -1,0 +1,40 @@
+{{ 'collection.css' | asset_url | stylesheet_tag }}
+<main class="collection">
+    <div class="inner">
+        <section id="banner">
+            <div class="inner">
+                {% case handle %}
+                {% when 'all' %}
+                    <img
+                            class="banner-img"
+                            src="//cdn.shopify.com/s/files/1/0712/3101/3158/files/macos-monterey-windows-theme-4-hd.jpg?v=1675321895"
+                            alt="all"
+                    >
+                    <div class="banner-txt">
+                        <span class="collection-name">Tất cả sản phẩm</span>
+                    </div>
+                    {% else %}
+                    {{ collection.featured_image | image_url: width: 900 | image_tag: class: 'banner-img' }}
+                    <div class="banner-txt">
+                        <span class="collection-name">{{ collection.handle }}</span>
+                        <p class="collection-desp">{{ collection.description }}</p>
+                    </div>
+                {% endcase %}
+            </div>
+        </section>
+        <section id="filters">
+            <div class="inner">
+                <form>
+                    <label for="cars">Collection:
+                        <select name="collection" id="collection">
+                            {% for collection in collections %}
+                                <option value="{{ collection.handle }}">{{ collection.title  }}</option>
+                            {% endfor %}
+                        </select>
+                    </label>
+                    <button type="submit">SEARCH</button>
+                </form>
+            </div>
+        </section>
+    </div>
+</main>

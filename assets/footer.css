@@ -1,0 +1,67 @@
+footer {
+  background: #f5f5f5;
+}
+footer .ft-cols {
+  display: flex;
+  justify-content: space-between;
+  padding: 4rem 1.5rem;
+  gap: 3rem;
+}
+footer .ft-cols .col {
+  text-align: left;
+  flex: 1;
+}
+footer .ft-cols .col .col-title {
+  font-weight: 600;
+  font-size: 1.8rem;
+  line-height: 2.7rem;
+  margin-bottom: 2rem;
+}
+footer .ft-cols .col .col-desp {
+  font-size: 1.6rem;
+  font-weight: 400;
+  transition: all ease 0.3s;
+}
+footer .ft-cols .col .col-desp li {
+  margin-bottom: 0.8rem;
+}
+footer .ft-cols .col .col-desp li a:hover {
+  text-decoration: underline;
+}
+footer .ft-opts {
+  display: flex;
+  justify-content: center;
+  gap: 3rem;
+}
+footer .ft-opts p {
+  font-size: 1.6rem;
+  line-height: 2.4rem;
+  font-weight: 400;
+}
+footer .ft-opts select {
+  width: 21rem;
+  height: 5rem;
+  background: none;
+  border-radius: 0;
+  border: 0.2rem solid #E7E7E7;
+  color: #767676;
+  -webkit-appearance: auto;
+     -moz-appearance: auto;
+          appearance: auto;
+}
+footer .ft-copyright {
+  border-top: 0.2rem solid #E7E7E7;
+  padding: 1.3rem 0 4rem 0;
+  margin-top: 2rem;
+}
+footer .ft-copyright .ft-term {
+  font-size: 1.4rem;
+  line-height: 2.1rem;
+  margin-bottom: 1.3rem;
+}
+footer .ft-copyright .ft-payments {
+  margin: 0 auto;
+  display: flex;
+  gap: 2.2rem;
+  justify-content: center;
+}

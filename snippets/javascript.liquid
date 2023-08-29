@@ -1,0 +1,18 @@
+<script src="{{ 'global.js' | asset_url }}" defer="defer"></script>
+<script
+  src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/8.4.6/swiper-bundle.min.js"
+  integrity="sha512-s/ili339Sh6gM9omfUC6fRwZPU6MPcGJxvDqlbBzPcFcD649iqeO96YQr3VKj/jZSMd2/T9Qr2mp2w4DyCIOPQ=="
+  crossorigin="anonymous"
+></script>
+<script rel="preconnect" src="https://kit.fontawesome.com/c6ab5af1fe.js" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js" crossorigin="anonymous"></script>
+<script src="{{ 'collection.js' | asset_url }}" defer="defer"></script>
+
+<script>
+  function prettyPrint() {
+    var ugly = document.querySelector('.spf-json').value;
+    var obj = JSON.parse(ugly);
+    var pretty = JSON.stringify(obj, undefined, 10);
+    document.querySelector('.spf-json').value = pretty;
+  }
+</script>

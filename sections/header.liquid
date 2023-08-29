@@ -1,0 +1,100 @@
+<header
+  id="header"
+  {% case section.settings.header_position %}
+    {% when 'static' %}
+      class="static-header"
+    {% when 'fixed' %}
+      class="fixed-header"
+    {% else %}
+      class="static-header"
+  {% endcase %}
+>
+  <div class="inner">
+    <nav class="nav">
+      <ul>
+        {% for link in linklists['main-menu'].links -%}
+          <li
+            {% if link.links != 'null' %}
+              class="has-submenu"
+            {% endif %}
+          >
+            {{ link.title | link_to: link.url }}
+            {% if link.links.size != 0 %}
+              <i class="fas fa-angle-down"></i>
+            {% endif %}
+            <ul class="submenu">
+              {% for sublink in link.links %}
+                <li>{{ sublink.title | link_to: sublink.url }}</li>
+              {% endfor %}
+            </ul>
+          </li>
+        {%- endfor %}
+      </ul>
+    </nav>
+    <a href="/" class="header-logo">
+      <div class="thumb">
+        {{ section.settings.logo_src | image_url: width: 100 | image_tag }}
+      </div>
+    </a>
+    <ul class="header-btns">
+      <li>
+        <button class="header-search-btn"><i class="fas fa-magnifying-glass"></i></button>
+      </li>
+      <li>
+        <button class="header-cart-btn"><i class="fas fa-cart-shopping"></i></button>
+      </li>
+      <li>
+        <button class="header-user-btn"><i class="fas fa-user"></i></button>
+      </li>
+    </ul>
+  </div>
+</header>
+
+{% schema %}
+{
+  "name": "store-header-logo",
+  "tag": "section",
+  "class": "store-header-logo",
+  "settings": [
+    {
+      "id": "header_position",
+      "type": "select",
+      "label": "Header position",
+      "options": [
+        {
+          "value": "static",
+          "label": "Static"
+        },
+        {
+          "value": "fixed",
+          "label": "Fixed"
+        }
+      ]
+    },
+    {
+      "id": "logo_src",
+      "type": "image_picker",
+      "label": "Store header logo image"
+    },
+    {
+      "id": "logo_alignment",
+      "type": "select",
+      "label": "Logo alignment",
+      "options": [
+        {
+          "value": "left",
+          "label": "Left"
+        },
+        {
+          "value": "right",
+          "label": "Right"
+        },
+        {
+          "value": "center",
+          "label": "Center"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

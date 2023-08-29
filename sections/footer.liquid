@@ -1,0 +1,94 @@
+<footer>
+  <div class="inner">
+    <div class="ft-cols">
+      <div class="col">
+        <p class="col-title">Draft</p>
+        <p class="col-desp">
+          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Asperiores id labore soluta temporibus! Minus, nihil
+          quod? Nisi, excepturi nemo vitae in soluta dolorum doloribus maiores minima ex tenetur sapiente perferendis!
+        </p>
+      </div>
+      <div class="col">
+        <p class="col-title">Explore</p>
+        <div class="col-desp">
+          <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/">Home</a></li>
+            <li><a href="/">Home</a></li>
+            <li><a href="/">Home</a></li>
+            <li><a href="/">Home</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="col">
+        <p class="col-title">Explore more</p>
+        <div class="col-desp">
+          <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/">Home</a></li>
+            <li><a href="/">Home</a></li>
+            <li><a href="/">Home</a></li>
+            <li><a href="/">Home</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="col">
+        <p class="col-title">Explore more</p>
+        <div class="col-desp">
+          <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/">Home</a></li>
+            <li><a href="/">Home</a></li>
+            <li><a href="/">Home</a></li>
+            <li><a href="/">Home</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="ft-opts">
+      <div class="ft-currency">
+        <p>Select currency</p>
+        <select name="currency" id="ft-currency">
+          <i class="fas fa-angle-down"></i>
+          <option value="VND">VND</option>
+          <option value="USD">USD</option>
+        </select>
+      </div>
+      <div class="ft-language">
+        <p>Select language</p>
+        <select name="language" id="ft-language">
+          <i class="fas fa-angle-down"></i>
+          <option value="English">English</option>
+          <option value="Vietnamese">Vietnamese</option>
+        </select>
+      </div>
+    </div>
+    <div class="ft-copyright">
+      <p class="ft-term">© 2021 Draft. All Rights Reserved. Terms, Privacy & Accessibility.</p>
+      <ul class="ft-payments">
+        {% for payment in section.blocks %}
+          <li>{{ payment.settings.image | image_url | img_tag }}</li>
+        {% endfor %}
+      </ul>
+    </div>
+  </div>
+</footer>
+{% schema %}
+{
+  "name": "Footer",
+  "tag": "section",
+  "blocks": [
+    {
+      "name": "Payment Method",
+      "type": "payment",
+      "settings": [
+        {
+          "id": "image",
+          "type": "image_picker",
+          "label": "Add your payment logo"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

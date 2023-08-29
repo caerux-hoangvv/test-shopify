@@ -1,0 +1,20 @@
+{
+  "sections": {
+    "image-banner": {
+      "type": "image-banner",
+      "settings": {
+      }
+    },
+    "test": {
+      "type": "multicolumn",
+      "settings": {
+        "title": "asff",
+        "title_size": "small"
+      }
+    }
+  },
+  "order": [
+    "image-banner",
+    "test"
+  ]
+}
